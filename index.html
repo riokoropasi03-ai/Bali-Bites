@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jelajahi jajanan khas Bali dan pesan camilan favorit Anda di BaliBites.">
+  <title>BaliBites — Jajanan Khas Bali</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="BaliBites beranda"><span class="brand-mark">B</span><span>Bali<span class="brand-accent">Bites</span><small>Rasa Bali, dekat di hati</small></span></a>
+    <nav aria-label="Navigasi utama">
+      <a href="#produk">Jajanan</a><a href="#tentang">Tentang</a><a href="#asisten">Asisten AI</a>
+    </nav>
+    <button class="cart-button" id="open-cart" type="button" aria-label="Buka keranjang">🛍️ Keranjang <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">✦ Cita rasa Nusantara ✦</span>
+        <h1>Manisnya Bali,<br><em>ada di setiap gigitan.</em></h1>
+        <p>Temukan jajanan khas Bali pilihan untuk menemani waktu santai, berbagi cerita, dan membawa pulang rasa pulau dewata.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#produk">Jelajahi Jajanan <span>↗</span></a><a class="text-link" href="#asisten">Bingung memilih? Tanya AI →</a></div>
+        <div class="hero-note"><span>🌺</span><span><strong>Pilihan lokal</strong><small>Kenali camilan khas Bali</small></span><span class="note-divider"></span><span><strong>Mudah dipesan</strong><small>Keranjang praktis</small></span></div>
+      </div>
+      <div class="hero-art" aria-label="Ilustrasi jajanan tradisional Bali">
+        <div class="sun"></div><div class="art-leaf leaf-one"></div><div class="art-leaf leaf-two"></div>
+        <div class="snack-plate"><div class="plate-ring"></div><div class="snack snack-a">🥮</div><div class="snack snack-b">🍘</div><div class="snack snack-c">🍡</div><div class="snack snack-d">🥥</div></div>
+        <div class="art-label"><span>BUATAN PILIHAN</span><strong>Rasa tradisi, cerita baru.</strong></div>
+        <span class="floating flower">✿</span><span class="floating sparkle">✧</span>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Keunggulan">
+      <div><span>🌴</span><strong>Terinspirasi Bali</strong><small>Kenikmatan tradisional</small></div>
+      <div><span>🍃</span><strong>Pilihan beragam</strong><small>Manis, gurih, dan renyah</small></div>
+      <div><span>💛</span><strong>Pesan praktis</strong><small>Semua dalam satu tempat</small></div>
+    </section>
+
+    <section class="section products-section" id="produk">
+      <div class="section-heading"><div><span class="eyebrow">DARI DAPUR LOKAL</span><h2>Temukan favoritmu<span class="heading-dot">.</span></h2><p>Jajanan khas Bali untuk setiap suasana.</p></div><span class="product-count" id="product-count">8 pilihan</span></div>
+      <div class="catalog-controls">
+        <label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Cari jajanan favorit..." aria-label="Cari produk"></label>
+        <div class="filter-chips" role="group" aria-label="Filter kategori">
+          <button class="chip active" data-category="Semua" type="button">Semua</button>
+          <button class="chip" data-category="Manis" type="button">Manis</button>
+          <button class="chip" data-category="Gurih" type="button">Gurih</button>
+          <button class="chip" data-category="Tradisional" type="button">Tradisional</button>
+        </div>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="empty-state" id="empty-state" hidden>Produk tidak ditemukan. Coba kata kunci lain.</p>
+    </section>
+
+    <section class="ai-section" id="asisten">
+      <div class="ai-visual"><div class="ai-orbit orbit-1"></div><div class="ai-orbit orbit-2"></div><div class="ai-core">✦<small>AI</small></div><span class="ai-bubble bubble-one">Manis 🍯</span><span class="ai-bubble bubble-two">Renyah ✨</span><span class="ai-bubble bubble-three">Favoritmu?</span></div>
+      <div class="ai-copy"><span class="eyebrow">TEMAN PILIHANMU</span><h2>Belum tahu mau ngemil apa?</h2><p>Ceritakan seleramu. Asisten BaliBites akan membantu merekomendasikan jajanan yang cocok untukmu.</p>
+        <div class="suggestion-prompts"><button type="button" class="prompt-chip" data-prompt="Saya suka jajanan manis.">🍯 Saya suka manis</button><button type="button" class="prompt-chip" data-prompt="Rekomendasikan camilan gurih dan renyah.">🥜 Gurih & renyah</button></div>
+        <div class="chat-box">
+          <div class="chat-messages" id="chat-messages" aria-live="polite"><div class="message assistant-message"><span class="avatar">✦</span><p>Halo! Aku asisten BaliBites. Kamu sedang ingin jajanan yang manis, gurih, atau tradisional?</p></div></div>
+          <form id="chat-form" class="chat-form"><label class="sr-only" for="chat-input">Pesan untuk asisten</label><input id="chat-input" type="text" placeholder="Tulis seleramu di sini..." autocomplete="off" required><button type="submit" aria-label="Kirim pesan">↑</button></form>
+          <small class="ai-disclaimer">Mode demo menggunakan rekomendasi lokal. Hubungkan API AI untuk percakapan generatif.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="tentang"><div class="about-icon">🌺</div><div><span class="eyebrow">CERITA DI BALIK RASA</span><h2>Merayakan jajanan,<br>menjaga cerita.</h2></div><p>BaliBites adalah demo website untuk memperkenalkan ragam jajanan khas Bali melalui pengalaman belanja digital yang sederhana. Kenali nama, rasa, dan inspirasi di balik setiap pilihan.</p></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark">B</span><span>Bali<span class="brand-accent">Bites</span><small>Rasa Bali, dekat di hati</small></span></a><p>Jajanan lokal, cerita yang istimewa.</p><small>© <span id="year"></span> BaliBites · Demo MVP HTML5</small></footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">PILIHANMU</span><h2 id="cart-title">Keranjang</h2></div><button class="icon-button" id="close-cart" aria-label="Tutup keranjang" type="button">×</button></div>
+    <div id="cart-items" class="cart-items"><p class="cart-empty">Keranjangmu masih kosong. Yuk pilih jajanan!</p></div>
+    <div class="cart-summary"><div><span>Subtotal</span><strong id="cart-subtotal">Rp0</strong></div><small>Biaya pengiriman (jika ada) dikonfirmasi penjual.</small><button id="checkout-button" class="button button-primary full-width" type="button" disabled>Lanjut ke pemesanan →</button></div>
+  </aside>
+
+  <dialog id="checkout-dialog" class="checkout-dialog">
+    <form id="checkout-form">
+      <div class="drawer-header"><div><span class="eyebrow">SATU LANGKAH LAGI</span><h2>Data pemesanan</h2></div><button class="icon-button" id="close-checkout" type="button" aria-label="Tutup">×</button></div>
+      <p class="dialog-intro">Isi data berikut untuk membuat ringkasan pesanan demo.</p>
+      <label>Nama lengkap<input name="name" required maxlength="80" placeholder="Nama penerima"></label>
+      <label>Nomor telepon<input name="phone" required inputmode="tel" maxlength="25" placeholder="08xxxxxxxxxx"></label>
+      <label>Alamat pengiriman<textarea name="address" required rows="3" maxlength="300" placeholder="Alamat lengkap"></textarea></label>
+      <label>Catatan (opsional)<textarea name="notes" rows="2" maxlength="300" placeholder="Catatan untuk penjual"></textarea></label>
+      <div class="checkout-total"><span>Total pesanan</span><strong id="checkout-total">Rp0</strong></div>
+      <button class="button button-primary full-width" type="submit">Buat ringkasan pesanan</button>
+      <small class="ai-disclaimer">Demo ini tidak memproses pembayaran atau mengirim pesanan ke penjual.</small>
+    </form>
+  </dialog>
+  <dialog id="order-dialog" class="checkout-dialog order-dialog"><button class="icon-button close-order" type="button" aria-label="Tutup">×</button><div class="success-icon">✓</div><span class="eyebrow">RINGKASAN PESANAN</span><h2>Terima kasih!</h2><p>Berikut ringkasan pesanan demo Anda.</p><div id="order-summary" class="order-summary"></div><button id="copy-order" class="button button-primary full-width" type="button">Salin ringkasan pesanan</button><button class="text-link centered close-order" type="button">Kembali ke toko</button></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
